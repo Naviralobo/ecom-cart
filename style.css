@@ -66,6 +66,47 @@ body {
   border-radius: 50%;
   font-weight: bold;
 }
+/* ========================== */
+/* HERO SECTION (GRID CENTER) */
+/* ========================== */
+
+.hero {
+  height: 300px;
+  background: linear-gradient(135deg, #ffd6a5, #ffb677);
+  display: grid;
+  place-items: center; /* centers vertically + horizontally */
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.hero h1::before,
+.hero h1::after {
+  content: "";
+  flex: 1; /* THIS makes it respect available space */
+  height: 2px;
+  background: black;
+  max-width: 100px;
+}
+.hero button {
+  margin-top: 10px;
+  padding: 10px 25px;
+  border: none;
+  background: #222;
+  color: #fff;
+  cursor: pointer;
+}
+
+.hero button:active {
+  background-color: red;
+}
 
 /* ========================== */
 /* PRODUCT GRID (auto-fit)    */
@@ -200,25 +241,8 @@ a:link {
   color: blue;
 }
 
-h1 {
-  position: relative;
-}
-
 a:visited {
   color: purple;
-}
-
-h1::before,
-h1::after {
-  content: "";
-  position: absolute;
-  top: 55%;
-  width: 80px;
-  height: 2px;
-  background-color: black;
-}
-h1::before {
-  left: 20px;
 }
 
 h3::first-letter {
@@ -256,6 +280,9 @@ h3::first-letter {
 }
 
 @media (max-width: 500px) {
+  .hero{
+    height:200px;
+  }
   .hero h1 {
     font-size: 20px;
   }

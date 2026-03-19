@@ -1,10 +1,10 @@
-import { initProducts } from "../pages/product.js";
+import { initHome } from "../pages/product.js";
 import { loadLayout } from "./components/layout.js";
 
 const init = async () => {
   loadLayout();
   const path = window.location.pathname;
-  initProducts();
+  initHome();
 };
 
 init();
