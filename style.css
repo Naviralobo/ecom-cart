@@ -14,9 +14,8 @@ body {
   font-family: Arial, sans-serif;
   background: #f8f8f8;
   color: #222;
-  height: 100vh;
+  min-height: 100vh;
   margin: 0;
-  overflow: hidden;
 }
 
 .container {
@@ -28,12 +27,22 @@ body {
   display: none;
 }
 
+button {
+  cursor: pointer;
+  transition: 0.3s;
+}
+button:hover {
+  filter: brightness(1.2);
+}
+
 /* ========================== */
 /* HEADER / NAVBAR (GRID USE) */
 /* ========================== */
 
 .header {
   display: flex;
+  position:fixed;
+  width:100%;
   justify-content: space-between;
   padding: 20px 40px;
   align-items: center;
@@ -46,7 +55,7 @@ body {
   font-weight: bold;
 }
 .logo span {
-  color: #ff6b00;
+  color: var(--secondary);
 }
 
 .cart-container {
@@ -113,7 +122,8 @@ body {
 /* ========================== */
 main {
   flex: 1;
-  overflow-y: auto;
+  margin-top:65px;
+  /* overflow-y: auto; */
 }
 
 .products-section {
@@ -208,7 +218,7 @@ main {
 .total-price {
   margin-top: 20px;
   padding: 15px;
-  background: #ff6b00;
+  background: var(--secondary);
   color: white;
   border-radius: 4px;
   display: flex;
@@ -221,7 +231,7 @@ main {
 /* ========================== */
 
 .footer {
-  margin-bottom: 0;
+  /* margin-bottom: 0; */
   padding: 20px;
   background: #222;
   color: #fff;
@@ -280,8 +290,8 @@ h3::first-letter {
 }
 
 @media (max-width: 500px) {
-  .hero{
-    height:200px;
+  .hero {
+    height: 200px;
   }
   .hero h1 {
     font-size: 20px;
