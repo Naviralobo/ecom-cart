@@ -39,7 +39,7 @@ export const initOffers = () => {
        <h3>${name}</h3>
        <img src="${url}" alt="${name}" class="product-image" />
        <div class="discount-label">
-         <span class="discount-amt"> ${discount}% </span>
+         <span class="discount-amt"> - ${discount}% </span>
          <span class="deal-text">Limited time deal</span>
        </div>
        <div>$${price} <span class="mrp">M.R.P<span> <span class="mrp-text">$${mrp}</span></div>

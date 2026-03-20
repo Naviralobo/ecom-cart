@@ -1,12 +1,12 @@
 import { products } from "../data/product.js";
 
-export const initHome = () => {
+export const initProducts = () => {
   const mainContent = document.querySelector("main");
 
   // Dynamically create product cards and append them to the main content
   const productSection = document.createElement("section");
 
-  productSection.innerHTML = "<h2>Featured Products</h2>";
+//   productSection.innerHTML = "<h2>Featured Products</h2>";
 
   productSection.setAttribute("class", "products-section");
 
@@ -20,10 +20,8 @@ export const initHome = () => {
 
   productSection.appendChild(productGrid);
 
-  const homepageProducts = products.filter((p) => p.inHomePage);
-
-  for (let i = 0; i < homepageProducts.length; i++) {
-    const product = homepageProducts[i];
+  for (let i = 0; i < products.length; i++) {
+    const product = products[i];
     const productCard = document.createElement("div");
 
     productCard.setAttribute("class", "product-card");
@@ -45,4 +43,14 @@ export const initHome = () => {
 
     productGrid.appendChild(productCard);
   }
+
+  productGrid.addEventListener("click", function (event) {
+    if (event.target.tagName === "BUTTON") {
+      const productId = event.target.getAttribute("data-id");
+      const quantityInput =
+        event.target.previousElementSibling.querySelector(".quantity-input");
+      const quantity = parseInt(quantityInput.value);
+      addItemsToCartArray(productId, quantity);
+    }
+  });
 };
