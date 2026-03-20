@@ -14,4 +14,11 @@ export const loadLayout = async () => {
   if (path === "/" || path.includes("index.html")) {
     await loadComponent("../components/hero.html", "hero");
   }
+
+  const hamburger = document.querySelector(".hamburger");
+  const nav = document.querySelector(".nav");
+
+  hamburger.addEventListener("click", () => {
+    nav.classList.toggle("open");
+  });
 };

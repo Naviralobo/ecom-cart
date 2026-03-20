@@ -16,6 +16,12 @@ body {
   color: #222;
   min-height: 100vh;
   margin: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+body.loaded {
+  opacity: 1;
 }
 
 .container {
@@ -41,8 +47,8 @@ button:hover {
 
 .header {
   display: flex;
-  position:fixed;
-  width:100%;
+  position: fixed;
+  width: 100%;
   justify-content: space-between;
   padding: 20px 40px;
   align-items: center;
@@ -55,6 +61,30 @@ button:hover {
   font-weight: bold;
 }
 .logo span {
+  color: var(--secondary);
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+}
+
+.nav-list {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+.nav-list a {
+  text-decoration: none;
+  color: #222;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-list a:hover,
+.nav-list a:active,
+.nav-list a.active-link {
   color: var(--secondary);
 }
 
@@ -74,6 +104,9 @@ button:hover {
   padding: 4px 7px;
   border-radius: 50%;
   font-weight: bold;
+}
+.hamburger {
+  display: none;
 }
 /* ========================== */
 /* HERO SECTION (GRID CENTER) */
@@ -122,8 +155,7 @@ button:hover {
 /* ========================== */
 main {
   flex: 1;
-  margin-top:65px;
-  /* overflow-y: auto; */
+  margin-top: 65px;
 }
 
 .products-section {
@@ -139,9 +171,8 @@ main {
 .product-grid {
   display: grid;
   gap: 30px;
-
-  /* Responsive magic */
-  grid-template-columns: 250px 250px 250px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  width: 100%;
 }
 
 .product-card,
@@ -151,6 +182,7 @@ main {
   border-radius: 8px;
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
+  /* width: 250px; */
 }
 
 .product-card img {
@@ -182,8 +214,9 @@ main {
   object-fit: contain;
   border-radius: 6px;
 }
+
 /* ========================== */
-/* CART SECTION                     */
+/* CART SECTION               */
 /* ========================== */
 .cart-section {
   margin-top: 40px;
@@ -277,9 +310,41 @@ h3::first-letter {
     text-align: center;
   }
   .nav {
-    justify-content: center;
-    margin-top: 10px;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #fff;
+    width: 200px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
   }
+
+  .nav.open {
+    transform: translateX(0);
+  }
+
+  .nav-list {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  /* Hamburger Icon */
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    font-size: 1.5rem;
+  }
+
+  .nav-list li a {
+    width: 100%;
+    padding: 8px 0;
+  }
+
   .footer {
     grid-template-columns: 1fr;
   }
