@@ -1,6 +1,7 @@
 import { initProducts } from "../pages/allProducts.js";
 import { initHome } from "../pages/home.js";
 import { initOffers } from "../pages/offers.js";
+import { initProduct } from "../pages/product-view.js";
 import { loadLayout } from "./layout.js";
 import { initNavigation } from "./navigation.js";
 
@@ -15,9 +16,11 @@ const init = async () => {
     initHome();
   } else if (path.includes("offers.html")) {
     initOffers();
-  }else if (path.includes("products.html")) {
+  } else if (path.includes("products.html")) {
     initProducts();
+  } else if (path.includes("product.html")) {
+    initProduct();
   }
 };
 
-init()
+init();

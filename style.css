@@ -237,7 +237,7 @@ main {
   margin-right: 5px;
 }
 /* Optional: style "Limited time deal" differently if needed */
-.discount-label .deal-text {
+.deal-text {
   color: var(--error);
 }
 
@@ -436,7 +436,7 @@ h3::first-letter {
     font-weight: 600;
   }
   .discount-label .discount-amt {
-    padding:2px 3px;
+    padding: 2px 3px;
     border-radius: 4px;
   }
   .info-cards {
@@ -452,6 +452,72 @@ h3::first-letter {
   .social {
     margin-top: 10px;
   }
+}
+
+/* ============================== */
+/*        PRODUCT VIEW            */
+/* ============================== */
+.product-view {
+  padding: 40px 20px;
+}
+
+.detail-container {
+  display: flex;
+  gap: 40px;
+  max-width: 1000px;
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+.detail-container img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+}
+
+.product-details {
+  flex: 1;
+}
+
+.product-details h1 {
+  margin-bottom: 10px;
+}
+
+.price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.discount-detail {
+  display: inline-block;
+  background: red;
+  color: #fff;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.desc {
+  margin: 15px 0;
+  color: #555;
+}
+
+.stock {
+  margin-bottom: 15px;
+}
+
+.add-to-cart {
+  padding: 12px 20px;
+  background: #ff6b00;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.add-to-cart:hover {
+  background: #e55b00;
 }
 
 @media (max-width: 500px) {
