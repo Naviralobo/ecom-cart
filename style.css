@@ -171,8 +171,9 @@ main {
 .product-grid {
   display: grid;
   gap: 30px;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   width: 100%;
+  justify-content: center;
 }
 
 .product-card,
@@ -182,7 +183,6 @@ main {
   border-radius: 8px;
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
-  /* width: 250px; */
 }
 
 .product-card img {
@@ -213,6 +213,46 @@ main {
   height: 150px;
   object-fit: contain;
   border-radius: 6px;
+}
+/* ========================== */
+/* OFFER PAGE                 */
+/* ========================== */
+.discount-label {
+  display: inline-block;
+  font-weight: bold;
+  margin: 5px 0;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+.discount-label .discount-amt {
+  background-color: #ff3b30;
+  color: #fff;
+  padding: 5px 2px 5px 10px;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+/* Optional: style "Limited time deal" differently if needed */
+.discount-label .deal-text {
+  color: #ff3b30;
+}
+
+.mrp-text,
+.mrp {
+  color: #999;
+  font-size: 0.8rem;
+}
+
+.mrp-text {
+  text-decoration: line-through;
+}
+
+.offer-card {
+  transition: transform 0.3s ease-in-out;
+}
+
+.offer-card:hover {
+  transform: scale(1.05);
+  cursor: pointer;
 }
 
 /* ========================== */
@@ -280,14 +320,6 @@ main {
   text-decoration: none;
 }
 
-a:link {
-  color: blue;
-}
-
-a:visited {
-  color: purple;
-}
-
 h3::first-letter {
   font-size: 30px;
 }
@@ -344,7 +376,15 @@ h3::first-letter {
     width: 100%;
     padding: 8px 0;
   }
-
+  .product-card {
+    padding: 5px;
+  }
+  .product-grid {
+    gap: 15px;
+  }
+  .discount-label {
+    font-size: 0.8rem;
+  }
   .footer {
     grid-template-columns: 1fr;
   }
