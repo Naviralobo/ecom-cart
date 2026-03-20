@@ -6,7 +6,7 @@ export const initProducts = () => {
   // Dynamically create product cards and append them to the main content
   const productSection = document.createElement("section");
 
-//   productSection.innerHTML = "<h2>Featured Products</h2>";
+  //   productSection.innerHTML = "<h2>Featured Products</h2>";
 
   productSection.setAttribute("class", "products-section");
 
@@ -24,21 +24,20 @@ export const initProducts = () => {
     const product = products[i];
     const productCard = document.createElement("div");
 
+    const { name, url, price, id } = product;
+
     productCard.setAttribute("class", "product-card");
-    productCard.setAttribute("data-id", product.id);
+    productCard.setAttribute("data-id", id);
 
     productCard.innerHTML = `
-    <h3>${product.name}</h3>
-    <img src="${product.url}" alt="${product.name}" class="product-image" />
-    <p>Price: $${product.price}</p>
-    <button data-id="${product.id}" >View Product</button>
+    <h3>${name}</h3>
+    <img src="${url}" alt="${name}" class="product-image" />
+    <p>Price: $${price}</p>
+    <button data-id="${id}" >View Product</button>
     `;
-
-    const button = productCard.querySelector("button");
-
-    button.addEventListener(
+    productCard.addEventListener(
       "click",
-      () => (window.location.href = `/product.html?id=${product.id}`),
+      () => (window.location.href = `/product.html?id=${id}`),
     );
 
     productGrid.appendChild(productCard);

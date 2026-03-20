@@ -46,7 +46,7 @@ export const initOffers = () => {
 `;
 
       productCard.addEventListener("click", () => {
-        window.location.href = `/product-view.html?id=${id}`;
+        window.location.href = `/product.html?id=${id}`;
       });
 
       productGrid.appendChild(productCard);

@@ -38,8 +38,9 @@ button {
   cursor: pointer;
   transition: 0.3s;
 }
+
 button:hover {
-  filter: brightness(1.2);
+  filter: brightness(1.5);
 }
 
 /* ========================== */
@@ -189,7 +190,9 @@ main {
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
-
+.product-card:hover {
+  cursor: pointer;
+}
 .product-card img {
   width: 100%;
   border-radius: 6px;
