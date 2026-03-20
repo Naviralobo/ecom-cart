@@ -13,11 +13,6 @@ export const loadLayout = async () => {
   const path = window.location.pathname;
   if (path === "/" || path.includes("index.html")) {
     await loadComponent("../components/hero.html", "hero");
-
-    const button = document.getElementById("shopNowBtn");
-    button.addEventListener("click", () => {
-      window.location.href = "/products.html";
-    });
   }
 
   const hamburger = document.querySelector(".hamburger");

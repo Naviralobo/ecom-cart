@@ -44,4 +44,9 @@ export const initHome = () => {
 
     productGrid.appendChild(productCard);
   }
+
+  const button = document.getElementById("shopNowBtn");
+  button.addEventListener("click", () => {
+    window.location.href = "/products.html";
+  });
 };
