@@ -8,6 +8,10 @@ export const initSubscribe = () => {
   const modalText = document.getElementById("modal-text");
   const closeModal = document.getElementById("close-modal");
 
+  if (!subscribeBtn || !emailInput || !modal || !modalText || !closeModal) {
+    return;
+  }
+
   subscribeBtn.addEventListener("click", (e) => {
     e.preventDefault();
     const email = emailInput.value.trim();
@@ -27,7 +31,7 @@ export const initSubscribe = () => {
     emailInput.value = "";
   });
 
-  closeModal.addEventListener("click", (e) => {
+  closeModal?.addEventListener("click", (e) => {
     e.preventDefault();
     modal.classList.add("hidden");
   });
