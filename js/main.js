@@ -4,10 +4,12 @@ import { initOffers } from "../pages/offers.js";
 import { initProduct } from "../pages/product-view.js";
 import { loadLayout } from "./layout.js";
 import { initNavigation } from "./navigation.js";
+import { initSubscribe } from "./subscription.js";
 
 const init = async () => {
   await loadLayout(); //load header and footer and (hero if homepage)
   initNavigation(); //load navigation in header
+  initSubscribe();
 
   document.body.classList.add("loaded");
 
