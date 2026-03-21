@@ -1,7 +1,9 @@
 import { initProducts } from "../pages/allProducts.js";
+import { renderCart } from "../pages/cart.js";
 import { initHome } from "../pages/home.js";
 import { initOffers } from "../pages/offers.js";
 import { initProduct } from "../pages/product-view.js";
+import { updateCartCount } from "../utils/cart.js";
 import { loadLayout } from "./layout.js";
 import { initNavigation } from "./navigation.js";
 import { initSubscribe } from "./subscription.js";
@@ -11,6 +13,12 @@ const init = async () => {
   initNavigation(); //load navigation in header
   initSubscribe();
 
+  // update cart count in header
+  document.addEventListener("DOMContentLoaded", () => {
+    updateCartCount();
+  });
+
+  //just for smooth transition oon page change
   document.body.classList.add("loaded");
 
   const path = window.location.pathname;
@@ -22,6 +30,8 @@ const init = async () => {
     initProducts();
   } else if (path.includes("product.html")) {
     initProduct();
+  } else if (path.includes("cart.html")) {
+    renderCart();
   }
 };
 

@@ -303,46 +303,68 @@ main {
 /* ========================== */
 /* CART SECTION               */
 /* ========================== */
-.cart-section {
-  margin-top: 40px;
-  padding: 20px;
-  width: 100%;
-}
-
-#no-products {
-  color: #888;
-  margin-top: 10px;
-  text-align: center;
-}
-.cart-head {
-  text-align: center;
-  margin-bottom: 20px;
-}
-.cart-item-container {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  width: 100%;
-  margin-bottom: 10px;
-}
-
-.cart-item-container h4 {
-  text-align: left;
-}
-.cart-item-container div {
+#cart-container {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-}
-.total-price {
   margin-top: 20px;
-  padding: 15px;
-  background: var(--secondary);
-  color: white;
-  border-radius: 4px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
+.cart-item {
+  display: flex;
+  padding: 15px;
+  background: #fff;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  gap: 10px;
+}
+.cart-details {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 700px;
+}
+
+/* Image */
+.cart-image {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+/* Desktop layout */
+.cart-name {
+  flex: 2;
+}
+
+.cart-price {
+  flex: 1;
+  text-align: center;
+}
+
+.cart-quantity {
+  flex: 1.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.cart-total {
+  flex: 1;
+  text-align: right;
+  font-weight: bold;
+}
+.total-div{
+  font-size: 30px;
+  margin-top: 10px;
+}
+.cart-grand-total{
+  font-weight:bold;
+  color:var(--secondary);
+  align-self: flex-end;
+}
+
 
 /* ========================== */
 /* FOOTER                     */
@@ -486,6 +508,26 @@ h3::first-letter {
   .info-cards .card {
     width: 100%;
   }
+  #cart-container {
+    padding: 10px;
+  }
+  .cart-details {
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+    gap: 2px;
+  }
+  .cart-details div {
+    flex: none;
+  }
+  .cart-item {
+    width: 100%;
+  }
+  .cart-image {
+    width: 100px;
+    height: 100px;
+  }
+
   .footer {
     grid-template-columns: 1fr;
     justify-content: center;
