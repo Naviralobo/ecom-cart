@@ -26,7 +26,7 @@ export const initSubscribe = () => {
       return;
     }
 
-    modalText.textContent = `Email subscribed for ${email}`;
+    modalText.innerHTML = `<div class="email-text">Email subscribed for</div> <span class="subscribed-email"> ${email}<span>`;
     modal.classList.remove("hidden");
     emailInput.value = "";
   });
